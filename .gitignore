@@ -1,0 +1,15 @@
+.DS_Store
+
+# python
+.venv/
+__pycache__/
+*.pyc
+
+# exporter build artifacts (regenerate with exporter/build_career_street.py --
+# the one copy that matters for the live site is frontend/public/models/*.glb)
+exporter/out/
+exporter/career_street.usda
+exporter/career_street.glb
+exporter/assets/block.usda
+exporter/assets/sign.usda
+exporter/village.usda
