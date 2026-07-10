@@ -1,5 +1,7 @@
 # usd-resume
 
+**Live: [chinmay-rozekar.vercel.app](https://chinmay-rozekar.vercel.app)**
+
 An interactive, Minecraft-styled 3D resume. Scroll down a career street and
 each building is a chapter — RIT, AMD, Siemens EDA, current work in AI &
 agentic systems, and this site itself (still under construction, on
