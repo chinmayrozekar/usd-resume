@@ -49,3 +49,21 @@ npm run dev
 ```
 
 Open http://localhost:3000.
+
+## Deploy
+
+Vercel's remote build machine reliably OOMs on this app's build (the
+three.js/drei dependency tree is heavy enough that it dies during
+minification regardless of Node heap settings -- confirmed this isn't
+fixable from `next.config.ts` alone). Pushing to `master` will *not*
+auto-deploy successfully as a result.
+
+Instead, build locally (plenty of memory there) and upload the prebuilt
+output straight to production:
+
+```bash
+./deploy.sh
+```
+
+Requires the Vercel CLI to be authenticated (`npx vercel login`) and the
+repo linked to the `chinmay-rozekar` project (`npx vercel link`).

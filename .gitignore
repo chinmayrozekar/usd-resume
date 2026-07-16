@@ -13,3 +13,5 @@ exporter/career_street.glb
 exporter/assets/block.usda
 exporter/assets/sign.usda
 exporter/village.usda
+.vercel
+.env*
