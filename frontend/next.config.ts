@@ -9,6 +9,19 @@ const nextConfig: NextConfig = {
   experimental: {
     cpus: 1,
     workerThreads: false,
+    // Reduces webpack's peak heap during compilation (string interning /
+    // dual buffer caching) at a small cost to build time -- see
+    // https://nextjs.org/docs/app/guides/memory-usage
+    webpackMemoryOptimizations: true,
+  },
+  webpack: (config, { dev }) => {
+    // The webpack cache (filesystem or in-memory) exists to speed up
+    // *repeat* builds, but each Vercel deploy is a fresh container with
+    // nothing to reuse -- it only adds peak memory for zero benefit here.
+    if (!dev) {
+      config.cache = false;
+    }
+    return config;
   },
 };
 
