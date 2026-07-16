@@ -39,6 +39,7 @@ TILE_INDEX = {
     "orange": 15,
     "teal": 16,
     "charcoal": 17,
+    "nvidia_green": 18,
 }
 
 # block type name -> which tile each face samples ("side" covers all 4 walls)
@@ -59,6 +60,7 @@ BLOCK_FACES = {
     "orange": {"top": "orange", "bottom": "orange", "side": "orange"},
     "teal": {"top": "teal", "bottom": "teal", "side": "teal"},
     "charcoal": {"top": "charcoal", "bottom": "charcoal", "side": "charcoal"},
+    "nvidia_green": {"top": "nvidia_green", "bottom": "nvidia_green", "side": "nvidia_green"},
 }
 
 # rough flat average color per block type, used only as a USD-side
@@ -80,6 +82,7 @@ BLOCK_AVERAGE_COLOR = {
     "orange": (0.97, 0.41, 0.0),
     "teal": (0.0, 0.54, 0.58),
     "charcoal": (0.13, 0.13, 0.14),
+    "nvidia_green": (0.46, 0.73, 0.0),
 }
 
 
@@ -227,6 +230,10 @@ def _charcoal(rng):
     return _fill(rng, (33, 33, 36), variance=8, cell=2)
 
 
+def _nvidia_green(rng):
+    return _fill(rng, (118, 185, 0), variance=12, cell=2)
+
+
 _PAINTERS = {
     "grass_top": _grass_top,
     "grass_side": _grass_side,
@@ -246,6 +253,7 @@ _PAINTERS = {
     "orange": _orange,
     "teal": _teal,
     "charcoal": _charcoal,
+    "nvidia_green": _nvidia_green,
 }
 
 

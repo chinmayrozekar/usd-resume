@@ -18,7 +18,7 @@ from voxel_builder import VoxelBuilder
 
 OUTPUT = Path(__file__).parent / "career_street.usda"
 
-STREET_X0, STREET_X1 = -30, 70
+STREET_X0, STREET_X1 = -30, 82
 STREET_Z0, STREET_Z1 = -25, 25
 PATH_Z0, PATH_Z1 = -1, 1
 
@@ -38,7 +38,8 @@ BUILDING_BOUNDS = [
     (30, 3, 3),
     (42, -3, 3),
     (54, 3, 3),
-    (64, 0, 2),
+    (64, -3, 3),
+    (76, 0, 2),
 ]
 
 
@@ -228,7 +229,8 @@ def build():
 
     signal_tower(b, cx=42, cz=-3)
     construction(b, cx=54, cz=3)
-    signpost(b, cx=64, cz=0)
+    brand_tower(b, cx=64, cz=-3, half=3, height=13, wall="nvidia_green", trim="charcoal", company="nvidia", sign_scale=2.2)
+    signpost(b, cx=76, cz=0)
 
     # ---- foliage ----
     scatter_foliage(b)

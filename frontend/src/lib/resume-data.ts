@@ -2,7 +2,7 @@ export type Chapter = {
   id: string;
   kind: "hero" | "chapter" | "outro";
   building: string;
-  logo?: "rit" | "amd" | "siemens";
+  logo?: "rit" | "amd" | "siemens" | "nvidia";
   dates?: string;
   title: string;
   subtitle?: string;
@@ -101,6 +101,16 @@ export const CHAPTERS: Chapter[] = [
     cameraX: 54,
   },
   {
+    id: "nvidia",
+    kind: "chapter",
+    building: "nvidia-tower",
+    logo: "nvidia",
+    dates: "2026 – Present",
+    title: "NVIDIA",
+    subtitle: "This chapter hasn't been written yet — check back once it has.",
+    cameraX: 64,
+  },
+  {
     id: "contact",
     kind: "outro",
     building: "signpost",
@@ -110,6 +120,6 @@ export const CHAPTERS: Chapter[] = [
       { label: "GitHub →", href: "https://github.com/chinmayrozekar" },
       { label: "LinkedIn →", href: "https://linkedin.com/in/chinmayrozekar" },
     ],
-    cameraX: 64,
+    cameraX: 76,
   },
 ];

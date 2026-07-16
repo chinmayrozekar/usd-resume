@@ -44,6 +44,7 @@ const LOGO_STYLE: Record<string, { label: string; color: string }> = {
   rit: { label: "RIT", color: "#F76900" },
   amd: { label: "AMD", color: "#000000" },
   siemens: { label: "SIEMENS", color: "#008A93" },
+  nvidia: { label: "NVIDIA", color: "#76B900" },
 };
 
 function ChapterCard({ chapter }: { chapter: (typeof CHAPTERS)[number] }) {
