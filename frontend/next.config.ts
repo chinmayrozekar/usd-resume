@@ -13,6 +13,12 @@ const nextConfig: NextConfig = {
     // dual buffer caching) at a small cost to build time -- see
     // https://nextjs.org/docs/app/guides/memory-usage
     webpackMemoryOptimizations: true,
+    // three/@react-three/drei are huge barrel packages (25MB+ of examples,
+    // loaders, shaders we never touch) -- this rewrites our imports to
+    // reach directly into the specific submodules used, so webpack never
+    // has to resolve/parse the rest of the barrel just to tree-shake it
+    // back out.
+    optimizePackageImports: ["@react-three/drei", "@react-three/fiber", "three"],
   },
   webpack: (config, { dev }) => {
     // The webpack cache (filesystem or in-memory) exists to speed up
